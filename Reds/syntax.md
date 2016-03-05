@@ -75,7 +75,13 @@ comment {
 }
 ```
 
-		Usage rules:
-			○ Inline comments are allowed anywhere in the source code
-			○ Multi-line comments are allowed anywhere in the source code, except in expressions. Example:
-a: 1 + comment {5} 4   ; this will produce a compilation error
+使用规则：
+
+* 单行注释允许出现在源码中任意的位置。
+* 多行注释禁止出现在表达式中。
+
+例如：
+
+```R
+a: 1 + comment {5} 4   ; 造成编译错误
+```
