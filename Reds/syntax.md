@@ -29,10 +29,15 @@ while [a > 0][print "loop" a: a - 1]
 
 [路径](./datatypes/path.md)分隔符：`/`
 
-Path separator: slash (denotes a hierarchical relation)
-		s: declare struct! [i [integer!] b [byte!]]
+```R
+s: declare struct! [
+    i [integer!] 
+    b [byte!]
+]
 s/i: 123
 s/b: #"A"
+```
+
 ## Free-form syntax
 		Red/System (and Red) inherits the free-form syntax of the REBOL language. The only syntactic constraints are putting a whitespace (in the large sense) between tokens and correctly pairing delimiters.
 		Examples of valid code:
