@@ -3,7 +3,8 @@
         "autocover",
         "ace",
         "betterchinese",
-        "search-pro"
+        "search-pro",
+        "sectionx"
     ],
     "pluginsConfig": {}
 }
