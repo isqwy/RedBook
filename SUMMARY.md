@@ -3,7 +3,7 @@
 * [Introduction](README.md)
 * [Red/System方言](reds.md)
    * [语法](Reds/syntax.md)
-   * [变量](Reds/var.md)
+   * [变量](Reds/varmd.md)
    * [值型](Reds/datatype.md)
    * [表达式](Reds/expr.md)
    * [函数](Reds/func.md)
