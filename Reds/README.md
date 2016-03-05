@@ -1,2 +1,2 @@
-*  [语法](Reds/syntax.md)
+*  [语法](syntax.md)
 *  
