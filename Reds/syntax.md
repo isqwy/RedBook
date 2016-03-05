@@ -1,13 +1,12 @@
 # 语法
 
-The syntax is almost the same as the one used by REBOL language, as the lexer (LOAD) is currently provided by REBOL during the bootstrapping phase. The REBOL syntax does not have a formal specification nor an exhaustive documentation, just a superficial description, but it is enough to work with. See:
+语法与[REBOL](http://www.rebol.com)相似。在目前的自举阶段，词法分析器是由`REBOL`提供的。但不幸REBOL也没有正式的语法定义，仅一些粗浅描述：
 
-*  http://www.rebol.com/docs/core23/rebolcore-3.html (There is a typo in the table, all literals are missing a caret (^) character after the first quote)
+*  http://www.rebol.com/docs/core23/rebolcore-3.html
 *  http://www.rebol.com/r3/docs/guide/code-syntax.html
-	A complete syntax specification for both Red and Red/System will be provided during the implementation of the Red language layer.
 
-For now, Red/System uses 8-bit character encoding (ASCII). Once proper Unicode support will be provided by the Red language layer, Red/System will switch to UTF-8 source encoding.
-	Here are a few practical aspects of the language syntax:
+当前Red/System仍使用8位的ASCII字符编码。以后会切换到 `UTF-8`
+
 ## Delimiters
 		String delimiters: double quotes
 		"this is a string"
