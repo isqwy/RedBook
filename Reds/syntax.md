@@ -38,30 +38,43 @@ s/i: 123
 s/b: #"A"
 ```
 
-## Free-form syntax
-		Red/System (and Red) inherits the free-form syntax of the REBOL language. The only syntactic constraints are putting a whitespace (in the large sense) between tokens and correctly pairing delimiters.
-		Examples of valid code:
-		while [a > 0][print "loop" a: a - 1]
-		while [a > 0]
+## 语法形式自由
+
+唯一的限制是：**标识间以空白分隔&正解配对分隔符**。下例都是合法代码：
+
+```R
+while [a > 0][print "loop" a: a - 1]
+
+while [a > 0]
     [print "loop" a: a - 1]
-		while [
+
+while [
    a > 0
 ][
    print "loop"
    a: a - 1
 ]
-		Code guidelines are not yet available. They will follow standard REBOL practices.
+```
 
-## Comments
-		Inline comment:
-		;this is a commented line
-		print "hello world"    ; this is another comment
-		Multiline comment:
-		comment {
+## 注释
+
+单行注释：
+
+```
+;this is a commented line
+print "hello world"    ; this is another comment
+```
+
+多行注释：
+
+```
+comment {
     This is a
     multiline
     comment
 }
+```
+
 		Usage rules:
 			○ Inline comments are allowed anywhere in the source code
 			○ Multi-line comments are allowed anywhere in the source code, except in expressions. Example:
