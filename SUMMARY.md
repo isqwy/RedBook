@@ -1,7 +1,7 @@
 # 目录
 
 * [Red/System方言](reds.md)
-  * [语法](reds/syntax.md)
+  * [语法](Reds/syntax.md)
   * [变量](reds/var.md)
   * [值型](reds/datatype.md)
   * [表达式](reds/expr.md)
