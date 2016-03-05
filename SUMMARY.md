@@ -1,4 +1,4 @@
-# 摘要
+# 目录
 
 * [Red/System方言](reds.md)
   * [语法](reds/syntax.md)
