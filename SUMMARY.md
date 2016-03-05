@@ -1,6 +1,6 @@
 # 摘要
 
-* [Red/System方言](Reds.md)
+* [Red/System方言](reds.md)
   * [语法](reds/syntax.md)
   * [变量](reds/var.md)
   * [值型](reds/datatype.md)
