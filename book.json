@@ -3,9 +3,15 @@
         "autocover",
         "ace",
         "betterchinese",
+        "-search",
         "search-pro",
         "sectionx",
         "comscore"
     ],
-    "pluginsConfig": {}
+    "pluginsConfig": {
+        "search-pro": {
+            "cutWordLib": "nodejieba",
+            "defineWord" : ["函数","编程"]
+        }
+    }
 }
