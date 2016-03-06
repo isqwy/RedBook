@@ -5,4 +5,4 @@
 ## Red/System中的值型
 
 * [integer!](integer.md)
-* 
+* [byte!](byte.md)
