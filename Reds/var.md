@@ -15,16 +15,22 @@
 
     0 1 2 3 4 5 6 7 8 9 '
 
-再次，要避免十六进制整数的形式：由`A~F`开头，且由2,4,8个`A~F`与`0~9`构成。
+再次，要避免十六进制整数的形式：由`A~F`开头，且由2,4,8个`A~F`与`0~9`构成，并以`h`结尾。
 
-Also there is a another restriction to avoid letting the compiler mistake an hex integer for a variable name. Variable names starting with A-F letters consisting of 2, 4 or 8 A-F and 0-9 characters and ending with h are not allowed.
-	All identifiers (variables and function names) are case-insensitive.
-	Unicode support
-	As indicated in the Syntax section, Unicode support is not available during the bootstrapping phase, it will be available at Red layer, so Red/System will inherit it once rewritten in Red.
-	3.1 Setting a value
-		Variables can hold any value of the available datatypes. This can be the real value (like integer! or pointer!) or a reference to the real value as is the case for struct! or c-string!). To assign a value to a variable, use a colon character at the end of the variable identifier.
-		foo: 123
+最后，所有标识符(变量及函数名)都不区分大小写。
+
+**Unicode**
+>因目前仍是ascii编码，故暂不支持Unicode作变量名。
+
+## 赋值
+
+变量可持有任意类型的值。即可以是实值(如 `integer!,pointer!`)也可以是对实值的引用(如`struct!,c-string!`)。给变量赋值，以冒号作为变量名后缀：
+
+```R
+foo: 123
 bar: "hello"
+```
+
 		Multiple assignments
 		Multiple assignments, like a: b: 123, are not currently supported in Red/System. Such a feature will be added in the future at some point, probably on the rewrite of Red/System in Red.
 	3.2 Getting a value
