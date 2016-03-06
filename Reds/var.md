@@ -53,28 +53,33 @@ print bar    ;打印hello
 foo: 123
 bar: "hello"
 size: length? bar
-id: GetProcessID ;-- 'GetProcessID would return an integer!
+id: GetProcessID        ;-- 'GetProcessID would return an integer!
 compute: func [
    a [integer!]
    return: [integer!]
-   /local c                            ;-- 'c is declared without a type
+   /local c             ;-- 'c 的声明没有类型
 ][
-   c: 1                                ;-- inferred type is integer!
+   c: 1                 ;-- 推断其类型为 integer!
    a + c
 ]
 ```
 
-		are valid variable usages.
-		Initializations have to be done at root level of code, attempt to initialize from a block of code will result in a compilation error.
-		foo: 123                               ;-- valid initialization
-		if a < b [foo: 123]                    ;-- invalid initialization
-		Note: A function body block is considered a root level.
-		Allowed types for variables are:
-			○ integer!
-			○ byte!
-			○ float!
-			○ float32!
-			○ logic!
-			○ c-string!
-			○ struct!
-			○ pointer!
+初始化只能在代码的根层级中进行，因此，试图在代码块(`block!`)中初始化将造成编译错误：
+
+```R
+foo: 123                               ;-- 有效的初始化
+if a < b [foo: 123]                    ;-- 无效的初始化
+```
+
+**注意**：函数体被看作是根层级代码。
+
+变量有下列类型：
+
+* integer!
+* byte!
+* float!
+* float32!
+* logic!
+* c-string!
+* struct!
+* pointer!
