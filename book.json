@@ -1,4 +1,7 @@
 {
+    "themes": [
+        "comscore"
+    ]
     "plugins": [
         "autocover",
         "ace",
