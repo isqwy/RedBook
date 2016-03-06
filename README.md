@@ -10,9 +10,6 @@
 * Red官网：http://red-lang.org/
 * http://www.red-by-example.org/index.html
 
----
-
-{% include "./SUMMARY.md" %}
 
 
 ----
