@@ -6,3 +6,4 @@
 
 * [integer!](integer.md)
 * [byte!](byte.md)
+* [float!](float.md)
