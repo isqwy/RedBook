@@ -24,6 +24,7 @@
    * [path!](pathmd.md)
    * [integer!](datatypes/integer.md)
    * [byte!](datatypes/byte.md)
+   * float!
 * [GUI部分](gui.md)
    * [Draw方言](GUI/draw.md)
 * [附录](appendix.md)
