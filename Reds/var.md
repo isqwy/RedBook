@@ -24,21 +24,26 @@
 
 ## 赋值
 
-变量可持有任意类型的值。即可以是实值(如 `integer!,pointer!`)也可以是对实值的引用(如`struct!,c-string!`)。给变量赋值，以冒号作为变量名后缀：
+变量可持有任意类型的值。即可以是实值(如 `integer!,pointer!`)也可以是对实值的引用(如`struct!,c-string!`)。给变量赋值，以冒号作为变量名后缀*{这被称作**设字**(`set-word!`)类型}*：
 
 ```R
 foo: 123
 bar: "hello"
 ```
 
-		Multiple assignments
-		Multiple assignments, like a: b: 123, are not currently supported in Red/System. Such a feature will be added in the future at some point, probably on the rewrite of Red/System in Red.
-	3.2 Getting a value
-		Just use the variable name without any decoration to get its value or to pass it as a function's argument.
-		bar: "hello"
-print bar
-		will output:
-		hello
+**多重赋值**
+
+例如`a: b: 123`这样的多重赋值形式目前还不支持。
+
+## 用值
+
+没有修饰地使用变量名，将取得它的值，或被作为函数参数传递。*{相应的字型称为**用字**(`word!`)}*
+
+```R
+bar: "hello"
+print bar    ;打印hello
+```
+
 	3.3 Typing
 		Variables do have a type. Variables do not need to be declared before being used, but they require to be initialized anyway. Function local variables require to be declared, but the type specification part can be skipped if the variable is properly initialized. For example:
 		foo: 123
