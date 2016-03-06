@@ -44,7 +44,9 @@ bar: "hello"
 print bar    ;打印hello
 ```
 
-	3.3 Typing
+## 类型
+
+变量具有类型。用值前不必声明，但需初始化。
 		Variables do have a type. Variables do not need to be declared before being used, but they require to be initialized anyway. Function local variables require to be declared, but the type specification part can be skipped if the variable is properly initialized. For example:
 		foo: 123
 bar: "hello"
