@@ -23,6 +23,7 @@
 * [值型](datatypes/README.md)
    * [path!](pathmd.md)
    * [integer!](datatypes/integer.md)
+   * byte!
 * [GUI部分](gui.md)
    * [Draw方言](GUI/draw.md)
 * [附录](appendix.md)
