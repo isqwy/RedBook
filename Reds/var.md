@@ -46,13 +46,15 @@ print bar    ;打印hello
 
 ## 类型
 
-变量具有类型。用值前不必声明，但需初始化。
-		Variables do have a type. Variables do not need to be declared before being used, but they require to be initialized anyway. Function local variables require to be declared, but the type specification part can be skipped if the variable is properly initialized. For example:
-		foo: 123
+变量有类型。用值前不必声明，但需初始化。
+函数的内部变量需要声明，但若正确初始化，则可跳过声明的类型规范部分。例如：
+
+```
+foo: 123
 bar: "hello"
 size: length? bar
-id: GetProcessID                       ;-- 'GetProcessID would return an integer!
-		compute: func [
+id: GetProcessID ;-- 'GetProcessID would return an integer!
+compute: func [
    a [integer!]
    return: [integer!]
    /local c                            ;-- 'c is declared without a type
@@ -60,6 +62,8 @@ id: GetProcessID                       ;-- 'GetProcessID would return an integer
    c: 1                                ;-- inferred type is integer!
    a + c
 ]
+```
+
 		are valid variable usages.
 		Initializations have to be done at root level of code, attempt to initialize from a block of code will result in a compilation error.
 		foo: 123                               ;-- valid initialization
