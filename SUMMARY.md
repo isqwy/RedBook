@@ -22,7 +22,7 @@
    * [可能的改进](Reds/change.md)
 * [值型](datatypes/README.md)
    * [path!](pathmd.md)
-   * integer!
+   * [integer!](datatypes/integer.md)
 * [GUI部分](gui.md)
    * [Draw方言](GUI/draw.md)
 * [附录](appendix.md)
