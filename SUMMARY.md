@@ -20,7 +20,7 @@
    * [源码组织](Reds/code.md)
    * [保留字](Reds/words.md)
    * [可能的改进](Reds/change.md)
-* [值型](datatypes.md)
+* [值型](datatypes/README.md)
    * [path!](pathmd.md)
 * [GUI部分](gui.md)
    * [Draw方言](GUI/draw.md)
