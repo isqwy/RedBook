@@ -21,6 +21,7 @@
    * [保留字](Reds/words.md)
    * [可能的改进](Reds/change.md)
 * [值型](datatypes/README.md)
+   * logic!
    * [integer!](datatypes/integer.md)
    * [byte!](datatypes/byte.md)
    * [float!](datatypes/float.md)
