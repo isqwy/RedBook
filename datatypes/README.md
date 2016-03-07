@@ -8,3 +8,5 @@
 * [byte!](byte.md)
 * [float!](float.md)
 * [float32!](float32.md)
+* [logic!](logic.md)
+* [C-string!](c-string.md)
