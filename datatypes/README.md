@@ -7,3 +7,4 @@
 * [integer!](integer.md)
 * [byte!](byte.md)
 * [float!](float.md)
+* [float32!](float32.md)
