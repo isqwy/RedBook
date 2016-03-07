@@ -21,12 +21,12 @@
    * [保留字](Reds/words.md)
    * [可能的改进](Reds/change.md)
 * [值型](datatypes/README.md)
-   * logic!
    * [integer!](datatypes/integer.md)
    * [byte!](datatypes/byte.md)
    * [float!](datatypes/float.md)
    * [float32!](datatypes/float32.md)
        * logic!
+   * logic!
    * [path!](pathmd.md)
 * [GUI部分](gui.md)
    * [Draw方言](GUI/draw.md)
