@@ -26,7 +26,7 @@
    * [float!](datatypes/float.md)
    * [float32!](datatypes/float32.md)
    * [logic!](datatypes/logic.md)
-   * C-string!
+   * [C-string!](datatypes/c-string.md)
    * [path!](pathmd.md)
 * [GUI部分](gui.md)
    * [Draw方言](GUI/draw.md)
