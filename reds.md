@@ -6,5 +6,4 @@
 *  构建Red运行时底层库的工具。
 *  链接代码生成可执行文件的工具。
 
-----
-{% include "/Reds/README.md" %}
+`Red/System`采用`Red`的语法，但与C类似，语义级别更低。
