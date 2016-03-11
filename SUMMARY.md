@@ -7,7 +7,7 @@
    * [值型](Reds/datatype.md)
        * [值型转换](Reds/casting.md)
    * [表达式](Reds/expr.md)
-       * 表达式语法规则
+       * [表达式语法规则](Reds/xpr-rule.md)
    * [函数](Reds/func.md)
    * [作用域](Reds/scope.md)
    * [中缀操作](Reds/op.md)
