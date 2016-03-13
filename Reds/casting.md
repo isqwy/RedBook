@@ -1,6 +1,7 @@
 # 值型转换
 
-关键字`as`用于值型转换：
+用关键字`as`转换值型：
+
 ```
 as <new-type> value
 as [<new-type>] value                  ;-- alternative syntax
@@ -10,7 +11,7 @@ as [<new-type>] value                  ;-- alternative syntax
              <alias-name>
 ```
 
-示例：
+例子：
 
 ```
 foo: 0                                 ;-- foo is an integer variable
