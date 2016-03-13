@@ -9,7 +9,7 @@
 
 ## 分隔符
 
-[字符串](./datatypes/string.md)分隔符：`"双引号"`或`{花括号}`
+[字符串](../datatypes/string.md)分隔符：`"双引号"`或`{花括号}`
 
 ```R
 "this is a string"
@@ -19,7 +19,7 @@
 }
 ```
 
-[代码块](./datatypes/block.md)分隔符：`[方括号]`
+[代码块](../datatypes/block.md)分隔符：`[方括号]`
 
 ```R
 if a > 0 [print "TRUE"]
@@ -27,7 +27,7 @@ either a > 0 [print "TRUE"][print "FALSE"]
 while [a > 0][print "loop" a: a - 1]
 ```
 
-[路径](./datatypes/path.md)分隔符：`/`
+[路径](../datatypes/path.md)分隔符：`/`
 
 ```R
 s: declare struct! [
@@ -40,7 +40,7 @@ s/b: #"A"
 
 ## 语法形式自由
 
-唯一的限制是：**标识间以空白分隔&正解配对分隔符**。下例都是合法代码：
+唯一的限制是：**标识符以空白分隔&正确配对分隔符**。下例都是合法代码：
 
 ```R
 while [a > 0][print "loop" a: a - 1]
@@ -77,7 +77,7 @@ comment {
 
 使用规则：
 
-* 单行注释允许出现在源码中任意的位置。
+* 单行注释允许出现在源码中任意位置。
 * 多行注释禁止出现在表达式中。
 
 例如：
