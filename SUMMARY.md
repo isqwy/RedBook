@@ -30,7 +30,7 @@
    * [float!](datatypes/float.md)
    * [float32!](datatypes/float32.md)
    * [logic!](datatypes/logic.md)
-   * [C-string!](datatypes/c-string.md)
+   * [c-string!](datatypes/c-string.md)
    * [path!](pathmd.md)
    * [struct!](datatypes/struct.md)
    * [pointer!](datatypes/pointer.md)
