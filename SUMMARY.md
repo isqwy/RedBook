@@ -1,6 +1,5 @@
 # Summary
 
-* 入门
 * [关于Red](README.md)
 * [Red/System方言](reds.md)
    * [语法](Reds/syntax.md)
