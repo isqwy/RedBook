@@ -9,13 +9,7 @@
 
 
 
-## 相关资料网址
-
-* 本书GitBook地址：https://qwy.gitbooks.io/redit/content/
-* 本书GitHub地址：https://github.com/isqwy/redit
-* Github上的Red语言：https://github.com/red/red
-* Red官网：http://red-lang.org/
-* http://www.red-by-example.org/index.html
+#
 
 
 
