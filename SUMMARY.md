@@ -2,7 +2,7 @@
 
 * [前言](README.md)
    * [何谓编程？](programming.md)
-       * [二进制](bit.md)
+       * [二进制编码](bit.md)
    * [语言简介](about-red.md)
 * [Red/System方言](reds.md)
    * [语法](Reds/syntax.md)
