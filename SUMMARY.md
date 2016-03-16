@@ -1,6 +1,6 @@
 # Summary
 
-* [前传](README.md)
+* [前言](README.md)
    * [何谓编程？](programming.md)
    * [语言简介](about-red.md)
 * [Red/System方言](reds.md)
