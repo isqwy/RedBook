@@ -1,6 +1,7 @@
 # Summary
 
 * [关于Red](README.md)
+   * [何谓编程？](programming.md)
    * [语言简介](about-red.md)
 * [Red/System方言](reds.md)
    * [语法](Reds/syntax.md)
@@ -41,5 +42,4 @@
 * [GUI部分](gui.md)
    * [Draw方言](GUI/draw.md)
 * [附录](appendix.md)
-   * [何谓编程？](programming.md)
 
