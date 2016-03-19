@@ -17,6 +17,7 @@
        * [返回值](Reds/ReturnValue.md)
        * [属性](Reds/shu_xing.md)
            * [infix](Reds/infix.md)
+           * cdecl
    * [作用域](Reds/scope.md)
    * [中缀操作](Reds/op.md)
    * [流程控制](Reds/flow.md)
