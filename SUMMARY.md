@@ -46,6 +46,6 @@
    * [Draw方言](GUI/draw.md)
    * [VID方言](vid.md)
        * [代码结构](code-structure.md)
-       * panel设置
+       * [panel设置](panel-setting.md)
 * [附录](appendix.md)
 
