@@ -45,5 +45,6 @@
 * [GUI部分](gui.md)
    * [Draw方言](GUI/draw.md)
    * [VID方言](vid.md)
+       * 代码结构
 * [附录](appendix.md)
 
