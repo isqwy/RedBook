@@ -44,6 +44,6 @@
    * [pointer!](datatypes/pointer.md)
 * [GUI部分](gui.md)
    * [Draw方言](GUI/draw.md)
-   * VID方言
+   * [VID方言](vid.md)
 * [附录](appendix.md)
 
