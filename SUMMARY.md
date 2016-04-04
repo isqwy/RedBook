@@ -24,7 +24,7 @@
            * [catch](Reds/catch.md)
        * [类型推断](Reds/lei_xing_tui_duan.md)
        * [调用函数](Reds/diao_yong_han_shu.md)
-       * 函数指针
+       * [函数指针](Reds/han_shu_zhi_zhen.md)
    * [作用域](Reds/scope.md)
    * [中缀操作](Reds/op.md)
    * [流程控制](Reds/flow.md)
