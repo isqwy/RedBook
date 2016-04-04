@@ -23,3 +23,22 @@ get-file "bigfile.avi" :progress       ;-- blocking job would call 'progress
 
 **注意**
 >函数地址作为指针伪类型，不能直接用于表达式，但若需要，可转换为`integer!`值型。
+
+## 函数定义的别名
+
+为避免重复函数定义块，可使用关键字`alias`进行别名化：
+
+```
+<name>: alias function! [<spec>]
+
+<name> : 别名标识 (约定以 ! 为后缀)
+<spec> : 合法的函数定义块
+```
+
+例如：
+
+```
+foo!: alias function! [n [integer!] return: [integer!]]
+bar: func [f [foo!]][...]
+```
+
