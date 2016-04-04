@@ -7,6 +7,7 @@
 * [variadic](variadic.md);变参模式。
 * [typed](typed.md);参数类型化。
 * [custom](custom.md);自定义方式。
+* catch;
 
 
 ----
