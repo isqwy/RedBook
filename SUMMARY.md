@@ -23,7 +23,7 @@
            * [custom](Reds/custom.md)
            * [catch](Reds/catch.md)
        * [类型推断](Reds/lei_xing_tui_duan.md)
-       * 调用函数
+       * [调用函数](Reds/diao_yong_han_shu.md)
    * [作用域](Reds/scope.md)
    * [中缀操作](Reds/op.md)
    * [流程控制](Reds/flow.md)
