@@ -20,7 +20,7 @@
            * [cdecl](Reds/cdecl.md)
            * [variadic](Reds/variadic.md)
            * [typed](Reds/typed.md)
-           * custom
+           * [custom](Reds/custom.md)
    * [作用域](Reds/scope.md)
    * [中缀操作](Reds/op.md)
    * [流程控制](Reds/flow.md)
