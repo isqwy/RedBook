@@ -11,7 +11,10 @@
 **例子**
 
 ```
-progress: func [[cdecl] count [integer!]][
+progress: func [
+   [cdecl] 
+   count [integer!]
+][
    print "."                           ;-- make the user see some progress
 ]
 
@@ -22,7 +25,8 @@ get-file "bigfile.avi" :progress       ;-- blocking job would call 'progress
 函数指针可赋值给变量以非关联化或稍后使用。此种变量不能作为其它函数的参数或返回值，因为函数指针不是一阶值型。
 
 **注意**
->函数地址作为指针伪类型，不能直接用于表达式，但若需要，可转换为`integer!`值型。
+
+> 函数地址作为指针伪类型，不能直接用于表达式，但若需要，可转换为`integer!`值型。
 
 ## 函数定义的别名
 
@@ -41,4 +45,25 @@ get-file "bigfile.avi" :progress       ;-- blocking job would call 'progress
 foo!: alias function! [n [integer!] return: [integer!]]
 bar: func [f [foo!]][...]
 ```
+
+## 函数的间接引用
+
+```
+foo!: alias function! [n [integer!] return: [integer!]] 
+inc: func [n [integer!] return: [integer!]][ n + 1 ]
+bar: as foo! :inc
+print bar 2 ;-- will output 3
+```
+
+可以访问存储在结构中的函数指针：
+
+```
+s: declare struct! [
+    inc [function! [n [integer!] return: [integer!]]]]
+s/inc: :inc
+probe s/inc 3 ;-- will output 4
+
+```
+
+
 
