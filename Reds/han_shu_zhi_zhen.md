@@ -62,7 +62,37 @@ s: declare struct! [
     inc [function! [n [integer!] return: [integer!]]]]
 s/inc: :inc
 probe s/inc 3 ;-- will output 4
+```
 
+## 提前退出
+
+ 有时，函数需要被提前退出，这由关键字`exit`和`return`来实现。
+
+### exit
+
+仅立即从函数中退出。
+
+```
+test: func [a [integer!]][
+   if zero? a [exit]                   ;-- 这里如果 a = 0 就退出函数
+   ...                                 ;-- 如果 a <> 0, 则继续处理...
+]
+```
+
+### return
+
+立即从函数中退出并有返回值。
+
+```
+test: func [
+   a [integer!]
+   return: [c-string!]
+][
+   if zero? a [
+       return "Not allowed"            ;-- exit the function here if a = 0
+   ]
+   "ok"                                ;-- return "ok" if a <> 0
+]
 ```
 
 
