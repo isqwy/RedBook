@@ -9,4 +9,14 @@
         "size":  10
         }
     }
+    "plugins": [
+   "tbfed-pagefooter"
+],
+"pluginsConfig": {
+    "tbfed-pagefooter": {
+        "copyright":"Copyright &copy isqwy@qq.com 2018",
+        "modify_label": "修订时间：",
+        "modify_format": "YYYY-MM-DD HH:mm:ss"
+    }
+}
 }

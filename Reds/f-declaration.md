@@ -25,7 +25,7 @@
 <body>       : 函数体
 ```
 
->将来，由`function`定义的函数会不同于`func`的定义，因此现阶段最好仅使用`func`
+> 将来，由`function`定义的函数会不同于`func`定义的，因此现阶段最好仅使用`func`
 
 ## 例子
 
@@ -52,5 +52,9 @@ percent?: func [                       ;-- return relative percentage of a / b
 ]
 ```
 
-**关于参数传值**
->当前的实现中，`integer!,float!,float32!,byte!,logic!,pointer!`这6种变量是传值，而`c-string!, struct!`这两种变量是传引用。
+**关于参数传递**
+
+> 当前的实现中，`integer!,float!,float32!,byte!,logic!,pointer!`这6种变量是传值，而`c-string!, struct!`这两种变量是传址。
+
+
+
