@@ -1,1 +1,12 @@
-
+{
+    "title" : "RedBook",
+    "author" : "QWY",
+    "language" : "zh-hans",
+    "pluginsConfig": {
+    "fontsettings": {
+        "theme": "sepia",
+        "family": "serif",
+        "size":  10
+        }
+    }
+}
