@@ -20,56 +20,55 @@ Red/View(或View)组件是Red编程语言的图形系统。设计目标是：
 
 == Face 对象
 
-Face对象克隆于 `face!` 模板对象。 对象内的字段称为 _facet_ 。
+Face对象克隆于 `face!` 模板对象。 对象内的字段称为项(_facet_)。
 
-可用 facet 列表:
+可用项列表:
 
 [cols="1,1,1,1,2", options="header"]
 |===
 
-|Facet | Datatype | 强制? | 适用性 | 描述
-|type| word!| yes| all| Type of graphic component (see link:view.html#_face_types[below]).
-|offset| pair!| yes| all| Offset position from parent top-left origin.
-|size| pair!| yes| all| Size of the face.
-|text| string!| no| all| Label text displayed in the face.
-|image| image!| no| some| Image displayed in the face background.
-|color| tuple!| no| some| Background color of the face in R.G.B or R.G.B.A format.
-|menu| block!| no| all| Menu bar or contextual menu.
-|data| any-type!| no| all| Content data of the face.
-|enabled?| logic!| yes| all| Enable or disable input events on the face.
-|visible?| logic!|	yes| all| Display or hide the face.
-|selected| integer!, pair!, object!| no| some| For lists types, index of currently selected element. For text inputs, selected text. For windows, focused face.
-|flags| block!, word!| no|	some| List of special keywords altering the display or behavior of the face.
-|options| block!| no| some| Extra face properties in a [name: value] format.
-|parent| object!| no| all|	Back-reference to parent face (if any).
-|pane| block!| no| some| List of child face(s) displayed inside the face.
-|state| block| no| all| Internal face state info _(used by View engine only)_.
-|rate| integer!, time!| no| all| Face's timer. Periodically fires `time` event. An `integer!` sets a frequency in Hz, a `time!` sets an interval, `none` stops it.
-|edge|	object!| no| all| _(reserved for future use)_
-|para| object!| no| all| Para object reference for text positioning.
-|font|	object!| no| all| Font object reference for setting text facet's font properties.
-|actors| object!| no| all|	User-provided events handlers.
-|extra| any-type!| no|	all| Optional user data attached to the face (free usage).
-|draw| block!| no| all| List of Draw commands to be drawn on the face.
+|项 | 值型 | 强制? | 适用性 | 描述
+|type| word!| yes| all| 图形组件类型(see link:view.html#_face_types[below]).
+|offset| pair!| yes| all| 相对父左上角原点的偏移位置
+|size| pair!| yes| all| 对象尺寸
+|text| string!| no| all| 显示的标签文本
+|image| image!| no| some| 背景图
+|color| tuple!| no| some| R.G.B 或 R.G.B.A 格式的背景色
+|menu| block!| no| all| 菜单栏或上下文菜单
+|data| any-type!| no| all| 内容数据
+|enabled?| logic!| yes| all| 是否充许输入事件
+|visible?| logic!|	yes| all| 是否显示
+|selected| integer!, pair!, object!| no| some| 列表类型为当前选中元素的索引。 文本输入类型是选中文本。 窗口类型是焦点对象。
+|flags| block!, word!| no|	some| 特殊关键字列表，改变显示或行为
+|options| block!| no| some| [name: value] 格式的额外属性。
+|parent| object!| no| all|	对父件的反向引用(如果有)
+|pane| block!| no| some| 该对象内显示的子件列表
+|state| block| no| all| 内部状态信息 _(仅被View引擎使用)_
+|rate| integer!, time!| no| all| 计时器。 触发 `time` 事件。  `integer!` 设置Hz频率，`time!` 设置时间间隔，`none` 停止计时。
+|edge|	object!| no| all| _(保留将来使用)_
+|para| object!| no| all| 引用的段落(para)对象用于文本定位
+|font|	object!| no| all| 引用字体对象用于控制字体属性
+|actors| object!| no| all|	用户提供的事件处理程序
+|extra| any-type!| no|	all| 附加的额外数据(自由使用).
+|draw| block!| no| all| 呈现在对象上的Draw绘图命令块
 |===
 
-List of globally-usable flags for `flags` facet:
+`flags` 项全局使用的标志列表：
 
 [cols="1,4", options="header"]
 |===
-|Flag | Description
-|*all-over*| Send all `over` events to the face.
+|标志 | 描述
+|*all-over*| 接收所有 `over` 事件。
 |===
 
-
-Other face types specific flags are documented in their respective sections.
+其他特定于组件的标志记录在各自章节内。
 
 [NOTE]
 ====
-* Non-mandatory facets can be set to `none`.
-* `offset` and `size` are specified in screen pixels.
-* `offset` and `size` can sometime be set to `none` before displaying them. The View engine will take care of setting the values (like for panels in tab-panel type).
-* Display order (from back to front): color, image, text, draw.
+* 非强制项可设为 `none`.
+* `offset` 与 `size` 指定为屏幕像素
+* `offset` 与 `size` 有时在显示前可设为 `none` 而由 View 引擎管理其值(例如tab-panel型中的面板)。
+* 显示顺序(从底到面): color, image, text, draw.
 ====
 
 Creating a new face is achieved by cloning the `face!` object and providing *at least* a valid `type` name.
@@ -108,7 +107,7 @@ Font objects are clones of `font!` template object. One font object can be refer
 |angle| integer!| yes| Text writing angle in degrees (default is `0`).
 |color| tuple!| yes| Font color in R.G.B or R.G.B.A format.
 |anti-alias?| logic!, word!| no| Anti-aliasing mode (active/inactive or special mode). 
-|shadow| _(reserved)_| no| _(reserved for future use)_
+|shadow| _(reserved)_| no| _(保留将来使用)_
 |state| block!| no| Internal face state info _(used by View engine only)_.
 |parent| block!| no| Internal back reference to parent face(s) _(used by View engine only)_.
 |===
@@ -141,9 +140,9 @@ Para objects are clones of `para!` template object. One para object can be refer
 |===
 |Field| Datatype| Description
 
-|origin| _(reserved)_| _(reserved for future use)_
-|padding| _(reserved)_| _(reserved for future use)_
-|scroll| _(reserved)_| _(reserved for future use)_
+|origin| _(reserved)_| _(保留将来使用)_
+|padding| _(reserved)_| _(保留将来使用)_
+|scroll| _(reserved)_| _(保留将来使用)_
 |align| word!| Control horizontal text alignment: `left`, `center`, `right`.
 |v-align| _(reserved)_| Control vertical text alignment: `top`, `middle`, `bottom`.
 |wrap?| logic!| Enable/disable text wrapping in the face(s).
@@ -157,16 +156,16 @@ Para objects are clones of `para!` template object. One para object can be refer
 
 == The Face tree 
 
-Faces are organized in a tree which maps to the graphic components hierarchy on the display. The tree relations are defined from:
+Faces are organized in a tree which maps to the graphic components hierarchy on the 显示. The tree relations are defined from:
 
 * `pane` facet: list of one or more child face(s) in a block.
 * `parent` facet: reference to parent face.
 
-Order of face objects in a `pane` matters, it maps to the z-ordering of graphic objects (face at head of `pane` is displayed behind all other faces, the face at tail is displayed on top of all others).
+Order of face objects in a `pane` matters, it maps to the z-ordering of graphic objects (face at head of `pane` is 显示ed behind all other faces, the face at tail is 显示ed on top of all others).
 
-The root of a face tree is a `screen` face. A `screen` face can only display `window` faces from its `pane` block.
+The root of a face tree is a `screen` face. A `screen` face can only 显示 `window` faces from its `pane` block.
 
-In order for any face to be displayed on screen, it _must_ be connected to a `screen` face directly (for windows) or indirectly (for other face types).
+In order for any face to be 显示ed on screen, it _must_ be connected to a `screen` face directly (for windows) or indirectly (for other face types).
 
 image::face-tree.png[Face tree,align="center"]
 
@@ -175,7 +174,7 @@ image::face-tree.png[Face tree,align="center"]
 
 === Base 
 
-The `base` type is the most basic face type, but also the most versatile one. By default, it will only display a background of color `128.128.128`.
+The `base` type is the most basic face type, but also the most versatile one. By default, it will only 显示 a background of color `128.128.128`.
 
 [cols="1,3", options="header"]
 |===
@@ -183,7 +182,7 @@ The `base` type is the most basic face type, but also the most versatile one. By
 |`type`|	`'base`
 |`image`| An `image!` value can be specified, alpha channel is supported.
 |`color`| A background color can be specified, alpha channel is supported.
-|`text`| An optional text to be displayed inside the face.
+|`text`| An optional text to be 显示ed inside the face.
 |`draw`| Transparency is fully supported for Draw primitives.
 |===
 
@@ -198,7 +197,7 @@ _This face type should be used for any custom graphic component implementation._
 
 === Text 
 
-The `text` type is a static label to be displayed.
+The `text` type is a static label to be 显示ed.
 
 [cols="1,3", options="header"]
 |===
@@ -206,7 +205,7 @@ The `text` type is a static label to be displayed.
 
 |`type`|	`'text`
 |`text`|	Label text.
-|`data`|	Value to display as text.
+|`data`|	Value to 显示 as text.
 |`options`| Supported fields: `default`.
 |===
 
@@ -230,7 +229,7 @@ This type represents a simple button.
 |Facet| Description
 |`type`| `'button`
 |`text`| Button's label text.
-|`image`| The image will be displayed inside the button. Can be combined with a text.
+|`image`| The image will be 显示ed inside the button. Can be combined with a text.
 |===
 
 [cols="1,1,3", options="header"]
@@ -252,7 +251,7 @@ This type represents a button that retains its state after being pushed.
 |`text`| Toggle's label text.
 |`para`| Controls vertical and horizontal text alignment.
 |`data`| `true`: toggled; `false`: untoggled (default).
-|`image`| The image will be displayed inside the toggle. Can be combined with a text.
+|`image`| The image will be 显示ed inside the toggle. Can be combined with a text.
 |===
 
 [cols="1,1,3", options="header"]
@@ -263,14 +262,14 @@ This type represents a button that retains its state after being pushed.
 
 === Check 
 
-This type represents a check box, with an optional label text, displayed on left or right side.
+This type represents a check box, with an optional label text, 显示ed on left or right side.
 
 [cols="1, 4", options="header"]
 |===
 |Facet| Description
 |`type`| `'check`
 |`text`| Label text.
-|`para`| The `align` field controls if the text is displayed on the `left` or on the `right` side.
+|`para`| The `align` field controls if the text is 显示ed on the `left` or on the `right` side.
 |`data`| `true`: checked; `false`: unchecked; `none`: unchecked for 2-state check box, indeterminate for 3-state check box (default).
 |`flags`| Turn on tri-state check box feature (word!).
 |===
@@ -288,7 +287,7 @@ This type represents a check box, with an optional label text, displayed on left
 
 === Radio 
 
-This type represents a radio button, with an optional label text, displayed on left or right side. Only one radio button per pane is allowed to be checked.
+This type represents a radio button, with an optional label text, 显示ed on left or right side. Only one radio button per pane is allowed to be checked.
 
 [cols="1, 4", options="header"]
 |===
@@ -296,7 +295,7 @@ This type represents a radio button, with an optional label text, displayed on l
 |Facet| Description
 |`type`| `'radio`
 |`text`| Label text.
-|`para`| The `align` field controls if the text is displayed on the `left` or on the `right` side.
+|`para`| The `align` field controls if the text is 显示ed on the `left` or on the `right` side.
 |`data`| `true`: checked; `false`: unchecked (default).
 |===
 
@@ -316,7 +315,7 @@ This type represents a single-line input field.
 |Facet| Description
 |`type`|	`'field`
 |`text`|	Input text; read/write value.
-|`data`|	Value to display as text.
+|`data`|	Value to 显示 as text.
 |`selected`|	Selected text (pair! none!).
 |`options`| Supported fields: `default`.
 |`flags`| Turn on/off some special field features (block!).
@@ -328,7 +327,7 @@ The `selected` facet controls the text highlighting (read/write). A pair value i
 
 * `no-border`: removes edge decorations made by the underlying GUI framework.
 
-* `password`: instead of input characters, asterisks (\*) are displayed.
+* `password`: instead of input characters, asterisks (\*) are 显示ed.
 
 `data` facet is synchronized in real-time with `text` facet using the following conversion rules:
 
@@ -386,13 +385,13 @@ The `selected` facet controls the text highlighting (read/write). A pair value i
 
 === Text-list 
 
-This type represents a vertical list of text strings, displayed in a fixed frame. A vertical scrollbar appears automatically if the content does not fit the frame.
+This type represents a vertical list of text strings, 显示ed in a fixed frame. A vertical scrollbar appears automatically if the content does not fit the frame.
 
 [cols="1, 4", options="header"]
 |===
 |Facet| Description
 |`type`| `'text-list`
-|`data`| List of strings to display (`block!` `hash!`).
+|`data`| List of strings to 显示 (`block!` `hash!`).
 |`selected`| Index of selected string or none value if no selection (read/write).
 |===
 
@@ -412,7 +411,7 @@ This type represents a vertical list of text strings, displayed in a fixed frame
 
 === Drop-list 
 
-This type represents a vertical list of text strings, displayed in a foldable frame. A vertical scrollbar appears automatically if the content does not fit the frame.
+This type represents a vertical list of text strings, 显示ed in a foldable frame. A vertical scrollbar appears automatically if the content does not fit the frame.
 
 [cols="1, 4", options="header"]
 |===
@@ -420,11 +419,11 @@ This type represents a vertical list of text strings, displayed in a foldable fr
 |Facet| Description
 
 |`type`| `'drop-list`
-|`data`| List of strings to display (`block!` `hash!`).
+|`data`| List of strings to 显示 (`block!` `hash!`).
 |`selected`| Index of selected string or `none` value if no selection (read/write).
 |===
 
-The `data` facet accepts arbitrary values, but only string values will be added to the list and displayed. Extra values of non-string datatype can be used to create associative arrays, using strings as keys. The `selected` facet is a 1-based integer index indicating the position of the selected string in the list, and not in the `data` facet.
+The `data` facet accepts arbitrary values, but only string values will be added to the list and 显示ed. Extra values of non-string datatype can be used to create associative arrays, using strings as keys. The `selected` facet is a 1-based integer index indicating the position of the selected string in the list, and not in the `data` facet.
 
 *Supported flags:*
 
@@ -449,17 +448,17 @@ The `data` facet accepts arbitrary values, but only string values will be added 
 
 === Drop-down 
 
-This type represents an edit field with a vertical list of text strings displayed in a foldable frame. A vertical scrollbar appears automatically if the content does not fit the frame.
+This type represents an edit field with a vertical list of text strings 显示ed in a foldable frame. A vertical scrollbar appears automatically if the content does not fit the frame.
 
 [cols="1, 4", options="header"]
 |===
 |Facet| Description
 |`type`| `'drop-down`
-|`data`| List of strings to display (`block!` `hash!`).
+|`data`| List of strings to 显示 (`block!` `hash!`).
 |`selected`| Index of selected string or `none` value if no selection (read/write).
 |===
 
-The `data` facet accepts arbitrary values, but only string values will be added to the list and displayed. Extra values of non-string datatype can be used to create associative arrays, using strings as keys. The `selected` facet is a 1-based integer index indicating the position of the selected string in the list, and not in the `data` facet.
+The `data` facet accepts arbitrary values, but only string values will be added to the list and 显示ed. Extra values of non-string datatype can be used to create associative arrays, using strings as keys. The `selected` facet is a 1-based integer index indicating the position of the selected string in the list, and not in the `data` facet.
 
 *Supported flags:*
 
@@ -543,14 +542,14 @@ This type represents a cursor which can be moved along a horizontal or vertical 
 
 === Camera 
 
-This type is used to display a video camera feed.
+This type is used to 显示 a video camera feed.
 
 [cols="1, 4", options="header"]
 |===
 |Facet| Description
 |`type`| `'camera`
 |`data`| List of camera(s) name(s) as a block of strings.
-|`selected`| Select the camera to display from `data` list, using an integer index. If set to `none`, the camera feed is disabled.
+|`selected`| Select the camera to 显示 from `data` list, using an integer index. If set to `none`, the camera feed is disabled.
 |===
 
 [NOTE]
@@ -569,7 +568,7 @@ A panel is a container for other faces.
 
 |Facet| Description
 |`type`| `'panel`
-|`pane`| Block of children faces. Order in block defines z-order on display.
+|`pane`| Block of children faces. Order in block defines z-order on 显示.
 |===
 
 [NOTE]
@@ -581,7 +580,7 @@ A panel is a container for other faces.
 
 === Tab-panel 
 
-A tab-panel is a list of panels where only one can be visible at a given time. A list of panels names is displayed as "tabs", and used to switch between the panels.
+A tab-panel is a list of panels where only one can be visible at a given time. A list of panels names is 显示ed as "tabs", and used to switch between the panels.
 
 [cols="1, 4", options="header"]
 |===
@@ -600,7 +599,7 @@ A tab-panel is a list of panels where only one can be visible at a given time. A
 
 [NOTE]
 ====
-* Both `data` and `pane` facets need to be filled in order for the tab-panel to be displayed properly.
+* Both `data` and `pane` facets need to be filled in order for the tab-panel to be 显示ed properly.
 * If `pane` contains more panels than specified tabs, they will be ignored.
 * When adding/removing a tab, the corresponding panel needs to be added/removed too to/from `pane` list.
 ====
@@ -608,7 +607,7 @@ A tab-panel is a list of panels where only one can be visible at a given time. A
 
 === Window 
 
-Represents a window displayed on the OS desktop.
+Represents a window 显示ed on the OS desktop.
 
 [cols="1, 4", options="header"]
 |===
@@ -618,8 +617,8 @@ Represents a window displayed on the OS desktop.
 |`offset`| Offset from top-left corner of the desktop screen, not counting the window's frame decorations. (`pair!`)
 |`size`| Size of the window, not counting the window's frame decorations. (pair!)
 |`flags`| Turn on/off some special window features (`block!`).
-|`menu`| Displays a menu bar in the window (`block!`).
-|`pane`| List of faces to display inside the window (`block!`).
+|`menu`| 显示s a menu bar in the window (`block!`).
+|`pane`| List of faces to 显示 inside the window (`block!`).
 |`selected`| Select the face which will get the focus (`object!`).
 |===
 
@@ -628,7 +627,7 @@ Represents a window displayed on the OS desktop.
 
 * `modal`: makes the window modal, disabling all previously opened windows.
 * `resize`: enable window resizing (default is fixed size, not resizeable).
-* `no-title`: do not display a window's title text.
+* `no-title`: do not 显示 a window's title text.
 * `no-border`: remove window's frame decorations.
 * `no-min`: remove minimize button from window's drag bar.
 * `no-max`: remove maximize button from window's drag bar.
@@ -643,17 +642,17 @@ Represents a window displayed on the OS desktop.
 
 === Screen 
 
-Represents a graphic display unit connected to the computer (usually a monitor).
+Represents a graphic 显示 unit connected to the computer (usually a monitor).
 
 [cols="1, 4", options="header"]
 |===
 |Facet| Description
 |`type`| `'screen`
-|`size`| Size of the screen display in pixels. Set by the View engine when started (`pair!`).
-|`pane`| List of windows to display on the screen (`block!`).
+|`size`| Size of the screen 显示 in pixels. Set by the View engine when started (`pair!`).
+|`pane`| List of windows to 显示 on the screen (`block!`).
 |===
 
-All window faces which are displayed need to be children of a screen face.
+All window faces which are 显示ed need to be children of a screen face.
 
 
 === Group-box 
@@ -664,7 +663,7 @@ A group-box is a container for other faces, with a visible frame around it. _Thi
 |===
 |Facet| Description
 |`type`| `'group-box`
-|`pane`| Block of children faces. Order in block defines z-order on display.
+|`pane`| Block of children faces. Order in block defines z-order on 显示.
 |===
 
 [NOTE]
@@ -681,7 +680,7 @@ A group-box is a container for other faces, with a visible frame around it. _Thi
 . Use `show` to render the face object on screen.
 .. system resources are allocated at this point
 .. `face/state` block is set.
-. Remove the face from the pane to remove it from the display.
+. Remove the face from the pane to remove it from the 显示.
 . The garbage collector will take care of releasing the system resources associated when the face is not referenced anymore.
 
 [NOTE]
@@ -700,7 +699,7 @@ show <face>
 
 *Description*
 
-This function is used to update a face or a list of faces on screen. Only a face which is referenced in a face tree connected to a screen face can be properly rendered on screen. When called the first time, system resources will be allocated, the `state` facet will be set and the graphic component will be displayed on screen. Subsequent calls will reflect on screen any change made to the face object. If `pane` facet is defined, `show` will also apply to the children faces recursively.
+This function is used to update a face or a list of faces on screen. Only a face which is referenced in a face tree connected to a screen face can be properly rendered on screen. When called the first time, system resources will be allocated, the `state` facet will be set and the graphic component will be 显示ed on screen. Subsequent calls will reflect on screen any change made to the face object. If `pane` facet is defined, `show` will also apply to the children faces recursively.
 
 
 *State facet*
@@ -724,7 +723,7 @@ _The following information is provided only for reference, in normal operation, 
 
 == Realtime vs deferred updating anchor:realtime-vs-deferred-updating[]
 
-The View engine has two different modes for updating the display after changes are done to the face tree:
+The View engine has two different modes for updating the 显示 after changes are done to the face tree:
 
 * Realtime updating: any change to a face is immediately rendered on screen.
 
@@ -1002,9 +1001,9 @@ Disables a previously installed global event handler by removing it from the int
 [cols="1, 4", options="header"]
 |===
 |Word| Description
-|`screens`| List of screen faces representing connected displays.
-|`event-port`| _reserved for future use_
-|`metrics`| _reserved for future use_
+|`screens`| List of screen faces representing connected 显示s.
+|`event-port`| _保留将来使用_
+|`metrics`| _保留将来使用_
 |`platform`| View engine low-level platform code (includes backend code).
 |`VID`| VID processing code.
 |`handlers`| List of global event handlers
