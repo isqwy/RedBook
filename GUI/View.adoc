@@ -6,28 +6,28 @@
 
 ## 设计目标 
 
-The Red/View (or just View) component is a graphic system for the Red programming language. The design goals are:
+Red/View(或View)组件是Red编程语言的图形系统。设计目标是：
 
-* Data-oriented, minimal API
-* Virtual tree of objects as programming interface
-* Realtime or deferred synchronization between the virtual tree and the display system
-* Make two-way binding trivial to support
-* Ability to have different backends, across different platforms
-* Support OS, third-party and custom widget sets
-* Low performance overhead
+* 面向数据的最小API
+* 虚拟对象树作为编程接口
+* 在虚拟树与显示系统间实时或延迟的同步
+* 使双向绑定易于实现
+* 多平台后端
+* 支持操作系统、第三方和自定义小部件集
+* 低性能开销
 
-The virtual tree is built using face objects. Each face object maps to a graphic component on the display in a two-way binding.
+虚拟树由face对象构建。而每个face以双向绑定映射到显示的图形组件。 
 
-== Face object
+== Face 对象
 
-Face objects are clones of `face!` template object. A field in face object is called a _facet_.
+Face对象克隆于 `face!` 模板对象。 对象内的字段称为 _facet_ 。
 
-List of available facets:
+可用 facet 列表:
 
 [cols="1,1,1,1,2", options="header"]
 |===
 
-|Facet | Datatype | Mandatory? | Applicability | Description
+|Facet | Datatype | 强制? | 适用性 | 描述
 |type| word!| yes| all| Type of graphic component (see link:view.html#_face_types[below]).
 |offset| pair!| yes| all| Offset position from parent top-left origin.
 |size| pair!| yes| all| Size of the face.
